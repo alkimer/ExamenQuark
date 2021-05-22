@@ -7,6 +7,7 @@
   de consola es bastante distinto en C# ( o al menos no estoy familiarizado).. y me robó el 60% del tiempo del proyecto :(
 - Habiendo dicho esto , disculpas por el look and feel.. espero que al menos la funcionalidad cumpla con lo solicitado.
 - En el archivo DIAGRAM UML COTIZADOR.png está el diagrama
+- No estoy 100% seguro si entendí el punto F. Entendí que la idea era tener un método "Imprimir()" , que definí una interfaz "Imprimible" y en el diagrama UML lo agregué para que Cotización lo herede.
 
 RESPUESTAS PARTE H:
 
