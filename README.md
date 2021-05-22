@@ -6,6 +6,7 @@
 - Me arrepiento toda la vida de haber encarado el menu usando Console, vengo de Java y me encontré que el manejo
   de consola es bastante distinto en C# ( o al menos no estoy familiarizado).. y me robó el 60% del tiempo del proyecto :(
 - Habiendo dicho esto , disculpas por el look and feel.. espero que al menos la funcionalidad cumpla con lo solicitado.
+- En el archivo DIAGRAM UML COTIZADOR.png está el diagrama
 
 RESPUESTAS PARTE H:
 
