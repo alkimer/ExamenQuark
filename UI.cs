@@ -34,16 +34,17 @@ namespace ExamenQuark
         {
 
             Console.CursorVisible = false;
+            Console.WriteLine();
 
 
             Console.WriteLine(@$"################################ BIENVENIDOS AL SISTEMA DE COTIZACION ################################
-                                Tienda {tienda.Nombre} Direccion {tienda.Direccion}
-                                Vendedor {vendedor.Nombre} {vendedor.Apellido} - CODIGO: {vendedor.CodigoVendedor}
+                                Tienda: {tienda.Nombre} Direccion: {tienda.Direccion}
+                                Vendedor: {vendedor.Nombre} {vendedor.Apellido} - CODIGO: {vendedor.CodigoVendedor}
                                 1 - COTIZAR CAMISA
                                 2 - COTIZAR PANTALON
                                 3 - LISTAR HISTORICO DE COTIZACIONES
-                                4 - COTIZAR INMUEBLE
 ################################· PRESIONE Q PARA SALIR DEL COTIZADOR #################################");
+            Console.WriteLine();
 
             while (pressedKey.Key != ConsoleKey.Q)
             {
@@ -66,6 +67,8 @@ namespace ExamenQuark
                     break;
                 case ConsoleKey.D3:
                     this.VerHistoricoDeCotizaciones();
+                    MostrarMenuPrincipal();
+
                     break;
                 case ConsoleKey.D4:
                     break;
@@ -80,20 +83,25 @@ namespace ExamenQuark
 
         private void VerHistoricoDeCotizaciones()
         {
+            Console.WriteLine();
+            Console.WriteLine("-----------------------------------------------------");
             Console.WriteLine("-------------HISTORICO DE COTIZACIONES---------------");
 
             foreach (Cotizacion cotizacion in vendedor.HistorialCotizaciones)
             {
-                Console.WriteLine($"{cotizacion.FechaHora} - {cotizacion.PrendaCotizada} - Precio cotizado: { cotizacion.PrecioCotizado} ");
+                Console.WriteLine(cotizacion);
             }
+            Console.WriteLine("-----------------------------------------------------");
+            Console.WriteLine();
 
-            MostrarMenuPrincipal();
         }
 
         private void CotizarCamisa()
         {
             Cotizacion cotizacion;
             Console.WriteLine("################################ COTIZANDO CAMISA #################################");
+            Console.WriteLine("Recuerde que ingresando 'hist' puede consultar su historico de cotizaciones mientras ingresa los datos");
+
             int cantidadACotizar = 0;
             Camisa camisa = new();
 
@@ -124,6 +132,8 @@ namespace ExamenQuark
         {
             Cotizacion cotizacion;
             Console.WriteLine("################################ COTIZANDO PANTALON #################################");
+            Console.WriteLine("Recuerde que ingresando 'hist' puede consultar su historico de cotizaciones mientras ingresa los datos");
+
             int cantidadACotizar = 0;
             Pantalon pantalon = new();
 
@@ -189,8 +199,19 @@ namespace ExamenQuark
 
             while (!Utils.IsValidField(enteredValue, expectedType))
             {
-                Console.WriteLine("Verifique el valor ingresado");
-                enteredValue = Console.ReadLine();
+                if (enteredValue.ToLower().Equals("hist"))
+                {
+                    VerHistoricoDeCotizaciones();
+                    Console.WriteLine(message);
+
+                    enteredValue = Console.ReadLine();
+
+                }
+                else
+                {
+                    Console.WriteLine("Verifique el valor ingresado");
+                    enteredValue = Console.ReadLine();
+                }
 
             }
             return enteredValue;

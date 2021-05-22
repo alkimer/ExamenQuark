@@ -8,6 +8,7 @@ namespace ExamenQuark
 {
     class Cotizacion
     {
+        public Guid Identificaor { get; set; } = new();
         public DateTime FechaHora { get; private set; }
         public int CodigoVendedor { get; private set; }
         public Prenda PrendaCotizada { get; private set; }
@@ -21,6 +22,12 @@ namespace ExamenQuark
             PrendaCotizada = prendaCotizada;
             CantidadUnidades = cantidadUnidades;
             PrecioCotizado = precioCotizado;
+        }
+
+        public override string ToString()
+        {
+            return ($"{FechaHora} - {PrendaCotizada} - Precio cotizado: { PrecioCotizado}  ");
+
         }
     }
 }

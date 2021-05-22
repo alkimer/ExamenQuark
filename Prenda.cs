@@ -14,7 +14,7 @@ namespace ExamenQuark
 
         public override string ToString()
         {
-            return "Calidad: " + Calidad.ToString() + " Stock: " + Stock.ToString() + " Precio: " + Precio.ToString();
+            return "Tipo:" + this.GetType().Name + " - Calidad: " + Calidad.ToString() + " - Stock: " + Stock.ToString() + " - Precio: " + Precio.ToString();
         }
     }
 }

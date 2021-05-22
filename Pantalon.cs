@@ -28,7 +28,7 @@ namespace ExamenQuark
 
         public override string ToString()
         {
-            return base.ToString() + " Tipo: " + Tipo.ToString();
+            return base.ToString() + " - Tipo Pantalon: " + Tipo.ToString();
         }
     }
 

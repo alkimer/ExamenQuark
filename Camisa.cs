@@ -31,7 +31,7 @@ namespace ExamenQuark
 
         public override string ToString()
         {
-            return base.ToString() + " Cuello: " + Cuello.ToString() + " Manga: " + Manga.ToString();
+            return base.ToString() + " - Cuello: " + Cuello.ToString() + " - Manga: " + Manga.ToString();
         }
     }
 }
